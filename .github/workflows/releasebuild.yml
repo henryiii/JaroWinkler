@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - build
   release:
     types:
       - published
@@ -22,12 +23,6 @@ jobs:
           - arch: auto32
             python_tag: "pp37-*"
           - arch: auto32
-            python_tag: "pp38-*"
-
-          # PyPy Windows is currently broken in scikit-build
-          - arch: auto64
-            python_tag: "pp37-*"
-          - arch: auto64
             python_tag: "pp38-*"
     env:
       CIBW_BUILD: ${{matrix.python_tag}}
