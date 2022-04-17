@@ -24,7 +24,7 @@ else()
     FetchContent_Declare(
         jaro_winkler
         GIT_REPOSITORY https://github.com/maxbachmann/jarowinkler-cpp.git
-        GIT_TAG b0fe60f96d915aa3861bb1bbb150edb6d13c8cce # v1.0.0
+        GIT_TAG d06d2065b37f0fbac9b5c220177aaba58849b1db # v1.0.0
         GIT_SHALLOW TRUE
     )
     FetchContent_MakeAvailable(jaro_winkler)
