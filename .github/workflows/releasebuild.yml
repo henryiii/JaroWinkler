@@ -49,6 +49,7 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
+          name: sdist
           path: dist/*.tar.gz
 
   build_wheels_linux:
@@ -85,12 +86,8 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: artifact
-          path: dist/*.tar.gz
-
-      - uses: actions/checkout@v2
-        with:
-          submodules: 'true'
+          name: sdist
+          path: sdist
 
       - uses: actions/setup-python@v2
 
@@ -100,6 +97,7 @@ jobs:
       - name: Build wheel
         uses: pypa/cibuildwheel@v2.7.0
         with:
+          package_dir: sdist/*.tar.gz
           output-dir: wheelhouse
 
       - name: Upload wheels
