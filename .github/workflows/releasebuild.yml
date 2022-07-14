@@ -97,7 +97,7 @@ jobs:
       - name: Build wheel
         uses: pypa/cibuildwheel@v2.7.0
         with:
-          package_dir: sdist/*.tar.gz
+          package-dir: sdist/*.tar.gz
           output-dir: wheelhouse
 
       - name: Upload wheels
