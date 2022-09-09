@@ -1,5 +1,6 @@
 import os
 
+
 def show_message(*lines):
     print("=" * 74)
     for line in lines:
